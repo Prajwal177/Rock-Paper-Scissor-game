@@ -6,7 +6,7 @@ function countdown(num,a,b) {
         (num--) || clearInterval(int);
     },300);
     let afterCount = setTimeout(function() {
-        document.getElementById('game').innerHTML = "(You)"a + " X " + b"(Computer)";
+        document.getElementById('game').innerHTML = "(You)"+a + " X " + b+"(Computer)";
         let result;
         if (a === b) {
             result = "It's a Tie!";
