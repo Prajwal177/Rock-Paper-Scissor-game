@@ -4,6 +4,7 @@ function countdown(num,a,b) {
     let int = setInterval(function() {
         document.getElementById('game').innerHTML = num ;
         (num--) || clearInterval(int);
+        document.getElementById('result').innerHTML = "";
     },300);
     let afterCount = setTimeout(function() {
         document.getElementById('game').innerHTML = a + " X " + b;
@@ -11,22 +12,11 @@ function countdown(num,a,b) {
         if (a === b) {
             result = "It's a Tie!";
         }
-        else if (a == "Rock" && b == "Scissor") {
+        else if ((a == "Rock" && b == "Scissor") || (a == "Paper" && b == "Rock") ||
+        (a == "Scissor" && b == "Paper")) {
             result = "You win!";
         }
-        else if (a == "Rock" && b == "Paper") {
-            result = "You lost!"
-        }
-        else if (a == "Paper" && b == "Rock") {
-            result = "You win!";
-        }
-        else if (a == "Paper" && b == "Scissor") {
-            result = "You lost!"
-        }
-        else if (a == "Scissor" && b == "Paper") {
-            result = "You win!";
-        }
-        else if (a == "Scissor" && b == "Rock") {
+        else {
             result = "You lost!"
         }
         document.getElementById('result').innerHTML = result;
